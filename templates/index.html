@@ -1,11 +1,19 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Python Web Programming</title>
-</head>
-<body>
+{% extends "layout.html" %}
 
-	<h1>{{headline}}</h1>
+{% block heading %}
+	First Page
+{% endblock %}
 
-</body>
-</html>
+{% block body %}
+<p>
+	Lorem ipsum dolor sit amet,
+</p>
+<a href="{{url_for('more')}}">See more</a>
+
+<form action="{{url_for('hello')}}" method="post">
+	<input type="text" name="name" placeholder="Enter name">
+	<button>Submit</button>
+</form>
+
+
+{% endblock %}
